@@ -1,0 +1,27 @@
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor: Paul Mattal <pjmattal@elys.com>
+
+pkgname=hexedit-zeta
+pkgver=1.6
+pkgrel=1
+pkgdesc="View and edit files in hexadecimal or in ASCII"
+arch=('x86_64')
+url="http://rigaux.org/hexedit.html"
+license=('GPL')
+depends=('ncurses')
+options=(debug)
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/darktet/hexedit-zeta/archive/${pkgver}.tar.gz")
+sha256sums=('63e6114c4b40ad10f8e5bf140d4a4bcd3c70c4a34871d699a5e775b93a2874ac')
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  ./autogen.sh
+  ./configure
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  make prefix="${pkgdir}/usr" install
+}

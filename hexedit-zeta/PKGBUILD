@@ -11,7 +11,7 @@ url="http://rigaux.org/hexedit.html"
 license=('GPL')
 depends=('ncurses')
 options=(debug)
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/darktet/hexedit-zeta/archive/${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/santobollove/hexedit-zeta/archive/${pkgver}.tar.gz")
 sha256sums=('63e6114c4b40ad10f8e5bf140d4a4bcd3c70c4a34871d699a5e775b93a2874ac')
 
 build() {
